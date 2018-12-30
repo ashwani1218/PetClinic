@@ -1,13 +1,17 @@
 package com.ashwani.Services.Map;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
-public abstract class AbstractMapService<T,ID> {
+import com.ashwani.Model.BaseEntity;
 
-	protected Map<ID,T> map= new HashMap<>();
+public abstract class AbstractMapService<T extends BaseEntity,ID extends Long> {
+
+	protected Map<Long,T> map= new HashMap<>();
 	
 	Set<T> findAll(){
 		return new HashSet<>(map.values());
@@ -17,8 +21,16 @@ public abstract class AbstractMapService<T,ID> {
 		return map.get(id);
 	}
 	
-	T Save(ID id,T Object) {
-		map.put(id, Object);
+	T Save(T Object) {
+		if(Object!=null) {
+			if(Object.getId()==null) {
+				Object.setId(getNextId());
+			}
+			map.put(Object.getId(), Object);
+		}
+		else 
+			throw new RuntimeException("Object cannot be Null");
+		
 		return Object;
 	}
 	
@@ -29,5 +41,17 @@ public abstract class AbstractMapService<T,ID> {
 	void delete(T Object) {
 		map.entrySet().removeIf(entry->entry.getValue().equals(Object));
 	}
+	
+	private long getNextId() {
+		Long nextId=null;
+		try {
+			nextId=Collections.max(map.keySet())+1; 
+		}
+		catch(NoSuchElementException e) {
+			nextId=1L;
+		}
+		return nextId;
+	}
+
 }
 

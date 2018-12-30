@@ -23,7 +23,7 @@ public class PetServiceMap extends AbstractMapService<Pet,Long> implements PetSe
 	@Override
 	public Pet Save(Pet object) {
 		// TODO Auto-generated method stub
-		return super.Save(object.getId(), object);
+		return super.Save(object);
 	}
 
 	@Override

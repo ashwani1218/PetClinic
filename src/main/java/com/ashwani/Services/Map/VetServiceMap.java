@@ -23,7 +23,7 @@ public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetSe
 	@Override
 	public Vet Save(Vet object) {
 		// TODO Auto-generated method stub
-		return super.Save(object.getId(), object);
+		return super.Save(object);
 	}
 
 	@Override
