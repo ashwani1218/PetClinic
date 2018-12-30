@@ -3,9 +3,10 @@ package com.ashwani.Map;
 import java.util.Set;
 
 import com.ashwani.Model.Owner;
-import com.ashwani.Services.CrudService;
 
-public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements CrudService<Owner,Long>{
+import com.ashwani.Services.OwnerService;
+
+public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService{
 
 	@Override
 	public Set<Owner> findAll(){
@@ -31,5 +32,11 @@ public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements C
 	@Override
 	public void deleteById(Long id) {
 		super.deleteById(id);
+	}
+
+	@Override
+	public Owner findByLastName(String lastName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

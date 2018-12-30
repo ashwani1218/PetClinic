@@ -3,9 +3,9 @@ package com.ashwani.Map;
 import java.util.Set;
 
 import com.ashwani.Model.*;
-import com.ashwani.Services.CrudService;
+import com.ashwani.Services.PetService;
 
-public class PetServiceMap extends AbstractMapService<Pet,Long> implements CrudService<Pet,Long>{
+public class PetServiceMap extends AbstractMapService<Pet,Long> implements PetService{
 
 	@Override
 	public Set<Pet> findAll(){

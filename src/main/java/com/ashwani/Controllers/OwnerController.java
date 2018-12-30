@@ -3,11 +3,11 @@ package com.ashwani.Controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping("/Owners")
+@RequestMapping("/owners")
 @Controller
 public class OwnerController {
 
-	@RequestMapping({"","/Index","/Index.html"})
+	@RequestMapping({"","/index","/index.html"})
 	public String ListOwners() {
 		return "/Owners/index";
 	}
