@@ -5,6 +5,23 @@
 <title>List of Owners</title>
 </head>
 <body>
+	<!-- /*@thymesVar id="owner" type="com.ashwani.model.Owner"*/ -->
 	<h1 th:text="'Owners List'">List of Owners</h1>
+	<table>
+			<thead>
+			<tr>
+			<th>ID</th>
+			<th>FirstName</th>
+			<th>LastName</th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr th:each="owner:${owner}">
+				<td th:text="${owner?.id}">1</td>
+				<td th:text="${owner?.FirstName}">Ashwani</td>
+				<td th:text="${owner?.LastName}">Pandey</td>
+				</tr>
+			</tbody>
+		</table>
 </body>
 </html>
