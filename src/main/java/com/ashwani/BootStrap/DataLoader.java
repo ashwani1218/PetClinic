@@ -2,13 +2,14 @@ package com.ashwani.BootStrap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 import com.ashwani.Model.Owner;
 import com.ashwani.Model.Vet;
 import com.ashwani.Services.OwnerService;
 import com.ashwani.Services.VetService;
 
-
+@Component
 public class DataLoader implements CommandLineRunner {
 
 	private OwnerService ownerService;
@@ -30,9 +31,9 @@ public class DataLoader implements CommandLineRunner {
 		ownerService.Save(owner1);
 		
 		Owner owner2=new Owner();
-		owner1.setId(2L);
-		owner1.setFirstName("Aman");
-		owner1.setLastName("Pandey");
+		owner2.setId(2L);
+		owner2.setFirstName("Aman");
+		owner2.setLastName("Pandey");
 		ownerService.Save(owner2);
 		
 		Vet vet1=new Vet();
