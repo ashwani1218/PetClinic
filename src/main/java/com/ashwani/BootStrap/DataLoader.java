@@ -1,24 +1,25 @@
 package com.ashwani.BootStrap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 
-import com.ashwani.Map.OwnerServiceMap;
-import com.ashwani.Map.VetServiceMap;
 import com.ashwani.Model.Owner;
 import com.ashwani.Model.Vet;
 import com.ashwani.Services.OwnerService;
 import com.ashwani.Services.VetService;
 
+
 public class DataLoader implements CommandLineRunner {
 
 	private OwnerService ownerService;
 	private VetService vetService;
-	
-	public DataLoader() {
-		ownerService= new OwnerServiceMap();
-		vetService = new VetServiceMap();
-	}
 
+	@Autowired
+	public DataLoader(OwnerService ownerService, VetService vetService) {
+		this.ownerService = ownerService;
+		this.vetService = vetService;
+	}
+	
 	@Override
 	public void run(String... args) throws Exception {
 	

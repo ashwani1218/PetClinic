@@ -1,9 +1,13 @@
-package com.ashwani.Map;
+package com.ashwani.Services.Map;
 
 import java.util.Set;
+
+import org.springframework.stereotype.Service;
+
 import com.ashwani.Model.Vet;
 import com.ashwani.Services.VetService;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet,Long> implements VetService {
 
 	@Override

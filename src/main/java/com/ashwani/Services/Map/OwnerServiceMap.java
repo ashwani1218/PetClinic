@@ -1,11 +1,14 @@
-package com.ashwani.Map;
+package com.ashwani.Services.Map;
 
 import java.util.Set;
+
+import org.springframework.stereotype.Service;
 
 import com.ashwani.Model.Owner;
 
 import com.ashwani.Services.OwnerService;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService{
 
 	@Override

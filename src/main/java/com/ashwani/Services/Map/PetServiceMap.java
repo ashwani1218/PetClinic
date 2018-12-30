@@ -1,10 +1,13 @@
-package com.ashwani.Map;
+package com.ashwani.Services.Map;
 
 import java.util.Set;
+
+import org.springframework.stereotype.Service;
 
 import com.ashwani.Model.*;
 import com.ashwani.Services.PetService;
 
+@Service
 public class PetServiceMap extends AbstractMapService<Pet,Long> implements PetService{
 
 	@Override

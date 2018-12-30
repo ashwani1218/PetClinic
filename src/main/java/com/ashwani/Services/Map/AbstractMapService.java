@@ -1,4 +1,4 @@
-package com.ashwani.Map;
+package com.ashwani.Services.Map;
 
 import java.util.HashMap;
 import java.util.HashSet;
