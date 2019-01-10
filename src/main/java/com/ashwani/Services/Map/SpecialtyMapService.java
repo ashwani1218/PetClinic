@@ -3,10 +3,10 @@ package com.ashwani.Services.Map;
 import java.util.Set;
 import org.springframework.stereotype.Service;
 import com.ashwani.Model.Specialty;
-import com.ashwani.Services.SpecialtiesService;
+import com.ashwani.Services.SpecialtyService;
 
 @Service
-public class SpecialtyMapService extends AbstractMapService<Specialty, Long> implements SpecialtiesService {
+public class SpecialtyMapService extends AbstractMapService<Specialty, Long> implements SpecialtyService {
 
 	@Override
 	public
