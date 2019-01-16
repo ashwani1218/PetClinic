@@ -11,10 +11,12 @@ import com.ashwani.Model.Pet;
 import com.ashwani.Model.PetType;
 import com.ashwani.Model.Specialty;
 import com.ashwani.Model.Vet;
+import com.ashwani.Model.Visit;
 import com.ashwani.Services.OwnerService;
 import com.ashwani.Services.PetTypeService;
 import com.ashwani.Services.SpecialtyService;
 import com.ashwani.Services.VetService;
+import com.ashwani.Services.VisitService;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -23,15 +25,19 @@ public class DataLoader implements CommandLineRunner {
 	private VetService vetService;
 	private PetTypeService petTypeService; 
 	private SpecialtyService specialtyService;
+	private VisitService visitService;
 	
 	@Autowired
-	public DataLoader(OwnerService ownerService, VetService vetService,PetTypeService petTypeService,SpecialtyService specialtyService) {
+	public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
+			SpecialtyService specialtyService, VisitService visitService) {
+		super();
 		this.ownerService = ownerService;
 		this.vetService = vetService;
-		this.petTypeService=petTypeService;
-		this.specialtyService=specialtyService;
+		this.petTypeService = petTypeService;
+		this.specialtyService = specialtyService;
+		this.visitService = visitService;
 	}
-	
+
 	@Override
 	public void run(String... args) throws Exception {
 		int count= petTypeService.findAll().size();
@@ -80,6 +86,12 @@ public class DataLoader implements CommandLineRunner {
 		
 		ownerService.Save(owner1);
 		
+		Visit dogVisit= new Visit();
+		dogVisit.setPet(ashwanisPet);
+		dogVisit.setDate(LocalDate.now());
+		dogVisit.setDescription("Sneezy Doggy");
+		
+		visitService.Save(dogVisit);
 		
 		Owner owner2=new Owner();
 		owner2.setFirstName("Aman");
@@ -116,8 +128,5 @@ public class DataLoader implements CommandLineRunner {
 		vetService.Save(vet3);
 		
 		System.out.println("Vets Added..");
-	
-		
 	}
-
 }
