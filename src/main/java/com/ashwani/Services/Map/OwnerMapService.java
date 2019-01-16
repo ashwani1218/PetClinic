@@ -2,6 +2,7 @@ package com.ashwani.Services.Map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.ashwani.Model.Owner;
@@ -11,6 +12,7 @@ import com.ashwani.Services.PetService;
 import com.ashwani.Services.PetTypeService;
 
 @Service
+@Profile({"default","map"})
 public class OwnerMapService extends AbstractMapService<Owner,Long> implements OwnerService{
 
 	private PetTypeService petTypeService;

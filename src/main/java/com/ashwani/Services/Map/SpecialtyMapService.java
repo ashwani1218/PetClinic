@@ -2,12 +2,14 @@ package com.ashwani.Services.Map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.ashwani.Model.Specialty;
 import com.ashwani.Services.SpecialtyService;
 
 @Service
+@Profile({"default","map"})
 public class SpecialtyMapService extends AbstractMapService<Specialty, Long> implements SpecialtyService {
 
 	@Override
