@@ -11,13 +11,13 @@ import com.ashwani.Services.PetService;
 import com.ashwani.Services.PetTypeService;
 
 @Service
-public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService{
+public class OwnerMapService extends AbstractMapService<Owner,Long> implements OwnerService{
 
 	private PetTypeService petTypeService;
 	private PetService petService;
 	
 	
-	public OwnerServiceMap(PetTypeService petTypeService, PetService petService) {
+	public OwnerMapService(PetTypeService petTypeService, PetService petService) {
 		super();
 		this.petTypeService = petTypeService;
 		this.petService = petService;

@@ -4,11 +4,11 @@ import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
-import com.ashwani.Model.*;
+import com.ashwani.Model.Pet;
 import com.ashwani.Services.PetService;
 
 @Service
-public class PetServiceMap extends AbstractMapService<Pet,Long> implements PetService{
+public class PetMapService extends AbstractMapService<Pet,Long> implements PetService{
 
 	@Override
 	public Set<Pet> findAll(){
