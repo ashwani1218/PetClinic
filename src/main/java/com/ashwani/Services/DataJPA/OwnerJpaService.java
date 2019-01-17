@@ -64,7 +64,7 @@ public class OwnerJpaService implements OwnerService{
 
 	@Override
 	public Owner findByLastName(String lastName) {
-		return ownerRepository.findByLastName(lastName);
+		return null;
 	}
 
 }

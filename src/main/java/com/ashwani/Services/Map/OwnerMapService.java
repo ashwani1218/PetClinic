@@ -7,10 +7,13 @@ import org.springframework.stereotype.Service;
 
 import com.ashwani.Model.Owner;
 import com.ashwani.Model.Pet;
+import com.ashwani.Repository.OwnerRepository;
 import com.ashwani.Services.OwnerService;
 import com.ashwani.Services.PetService;
 import com.ashwani.Services.PetTypeService;
 
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 @Service
 @Profile({"default","map"})
 public class OwnerMapService extends AbstractMapService<Owner,Long> implements OwnerService{
@@ -37,6 +40,7 @@ public class OwnerMapService extends AbstractMapService<Owner,Long> implements O
 	
 	@Override
 	public Owner Save(Owner object) {
+		log.debug("In the Save method of Owner");
 		if(object!=null) {
 			if(object.getPets()!=null) {
 				object.getPets().forEach(pet->{
@@ -71,7 +75,7 @@ public class OwnerMapService extends AbstractMapService<Owner,Long> implements O
 
 	@Override
 	public Owner findByLastName(String lastName) {
-		// TODO Auto-generated method stub
 		return null;
 	}
+
 }
