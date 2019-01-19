@@ -17,7 +17,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @MappedSuperclass
-public class BaseEntity implements Serializable{
+public abstract class BaseEntity implements Serializable{
 
 	
 	@Id
