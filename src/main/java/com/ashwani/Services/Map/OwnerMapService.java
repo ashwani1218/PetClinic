@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.ashwani.Model.Owner;
 import com.ashwani.Model.Pet;
-import com.ashwani.Repository.OwnerRepository;
 import com.ashwani.Services.OwnerService;
 import com.ashwani.Services.PetService;
 import com.ashwani.Services.PetTypeService;
@@ -75,7 +74,7 @@ public class OwnerMapService extends AbstractMapService<Owner,Long> implements O
 
 	@Override
 	public Owner findByLastName(String lastName) {
-		return null;
+		return this.findAll().stream().filter(owner-> owner.getLastName().equalsIgnoreCase(lastName)).findFirst().orElse(null);
 	}
 
 }
