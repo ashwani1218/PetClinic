@@ -1,12 +1,11 @@
 package com.ashwani.Controllers;
 
-import static org.junit.jupiter.api.Assertions.fail;
+
 
 
 import java.util.HashSet;
 import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -43,16 +42,4 @@ class OwnerControllerTest {
 				.standaloneSetup(ownerController)
 				.build();
 	}
-
-
-	@Test
-	void testListOwners() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testFindOwners() {
-		fail("Not yet implemented");
-	}
-
 }
